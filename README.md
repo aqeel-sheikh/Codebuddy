@@ -119,6 +119,9 @@ The user interface is designed to be distraction-free. The focus was to give jus
 CodeBuddy is a compact yet powerful tool that helps developers organize their thoughts and code more efficiently. It supports CRUD operations for both notes and code, includes real-time search, and links to documentation—all within a clean, unified interface. It’s an ideal side project to practice backend skills, improve frontend interactivity, and build something genuinely useful.
 
 ---
+## 📄 License
+This project is licensed under the [MIT License](LICENSE)
 
+---
 
-Author **Thomas (aka Sheikh Aqeel)** as the final project for CS50x 🧑‍💻
+Author **Aqeel Sheikh** as the final project for CS50x 🧑‍💻
