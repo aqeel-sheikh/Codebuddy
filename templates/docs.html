@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}Docs | CodeBuddy{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4 text-center theme-primary">Developer Documentation 📖</h1>
+    <p class="text-center theme-text">Quick access to official docs for programming languages.</p>
+
+    <!-- 🔹 Documentation Dropdown -->
+    <div class="mt-4">
+        <select id="docsSelect" class="form-select glass-dropdown">
+            <option value="none" selected disabled>Select a documentation</option>
+            <option value="python">Python Docs</option>
+            <option value="javascript">JavaScript Docs</option>
+            <option value="html">HTML Docs</option>
+            <option value="css">CSS Docs</option>
+        </select>
+    </div>
+
+    <!-- 🌐 Docs Link -->
+    <div class="mt-4">
+        <a id="docsLink" href="#" target="_blank" class="btn btn-info w-100">Open Documentation</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById("docsSelect").addEventListener("change", function () {
+        let docsLinks = {
+            python: "https://www.python.org/doc/",
+            javascript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            html: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+            css: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+        };
+        document.getElementById("docsLink").href = docsLinks[this.value];
+    });
+</script>
+{% endblock %}

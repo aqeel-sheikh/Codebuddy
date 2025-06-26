@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Note | CodeBuddy{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center fw-bold theme-primary">✍ Edit Note</h1>
+
+    {% for note in notes %}
+    <div class="glass-card p-4 mt-4">
+        <form id="noteForm" action="/edit_notes/{{ note[0] }}" method="post">
+            <label class="theme-text">Title</label>
+            <input type="text" name="title" class="form-control mb-2" value="{{ note[1] }}">
+
+            <label class="theme-text">Content</label>
+            <textarea name="content" class="form-control mb-2" rows="4" required>{{ note[2] }}</textarea>
+
+            <label class="theme-text">Tags</label>
+            <input type="text" name="tags" class="form-control mb-2" value="{{ note[3] }}">
+
+            <button type="submit" class="btn btn-success w-100 mt-3">Update Note</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

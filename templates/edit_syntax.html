@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Syntax | CodeBuddy{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center fw-bold theme-primary">📝 Edit Syntax</h1>
+
+    {% for code in syntax %}
+    <div class="glass-card p-4 mt-4">
+        <form id="syntaxForm" action="/edit_syntax/{{ code[0] }}" method="post">
+            <label class="theme-text text-secondary">Language</label>
+            <input type="text" name="language" class="form-control mb-2" value="{{ code[1] }}" required>
+
+            <label class="theme-text text-secondary">Syntax/Code</label>
+            <textarea name="code" class="form-control mb-2" rows="3" required>{{ code[2] }}</textarea>
+
+            <label class="theme-text text-secondary">Description</label>
+            <input type="text" name="description" class="form-control mb-2" value="{{ code[3] }}">
+
+            <label class="theme-text text-secondary">Tags</label>
+            <input type="text" name="tags" class="form-control mb-2" value="{{ code[4] }}">
+
+            <button type="submit" class="btn btn-success w-100 mt-3">Update Syntax</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

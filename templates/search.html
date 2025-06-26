@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Search | CodeBuddy{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4 text-center theme-primary">Search🔍</h1>
+    <p class="text-center theme-text">Search through all your saved info</p>
+
+    <!-- 🔎 Search Bar -->
+    <input type="text" id="searchQuery" class="form-control glass-input mt-4" placeholder="Enter keywords..." onkeyup="searchNotes()">
+    
+    <!-- 📜 Search Results -->
+    <div id="searchResults" class="mt-4"></div>
+</div>
+
+<script>
+    document.getElementById("searchQuery").addEventListener("keyup", function() {
+        let searchQuery = this.value.trim().toLowerCase();
+        if (searchQuery === "") {
+            document.getElementById("searchResults").innerHTML = "";
+            return;
+        }
+
+        fetch("/search", {
+            method: "POST",
+            body: new URLSearchParams({ searchQuery: searchQuery }),
+            headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        })
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("searchResults").innerHTML = html;
+        });
+    });
+</script>
+{% endblock %}

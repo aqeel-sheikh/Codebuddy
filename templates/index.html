@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Home | CodeBuddy{% endblock %}
+
+{% block content %}
+    <!-- ✨ Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1>Welcome to CodeBuddy 👨‍💻</h1>
+            <p class="lead">Your premium coding assistant – save notes, store syntax, and search docs effortlessly.</p>
+            <div class="mt-4">
+                <a href="/notes" class="btn btn-primary btn-lg btn-custom"><i class="fas fa-sticky-note"></i> Go to Notes</a>
+                <a href="/syntax" class="btn btn-success btn-lg btn-custom"><i class="fas fa-code"></i> View Syntax</a>
+                <a href="/docs" class="btn btn-info btn-lg btn-custom"><i class="fas fa-book"></i> Search Docs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔥 Key Features -->
+    <div class="container mt-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-pencil-alt fa-3x mb-3 theme-accent"></i>
+                    <h3 class="fw-bold">Save Notes</h3>
+                    <p class="theme-text">Store coding snippets, thoughts, and project details effortlessly.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-code fa-3x mb-3 theme-primary"></i>
+                    <h3 class="fw-bold">Syntax Storage</h3>
+                    <p class="theme-text">Keep track of syntax references across multiple languages.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-search fa-3x mb-3 theme-secondary"></i>
+                    <h3 class="fw-bold">Search Docs</h3>
+                    <p class="theme-text">Find official documentation instantly without leaving your workflow.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
